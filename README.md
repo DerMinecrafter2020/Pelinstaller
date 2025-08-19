@@ -67,16 +67,6 @@ The installation scripts can install and configure a firewall for you. The scrip
 
 In `install.sh` github source and script release variables should change every release. Firstly, update the `CHANGELOG.md` so that the release date and release tag are both displayed. No changes should be made to the changelog points themselves. Secondly, update `GITHUB_SOURCE` and `SCRIPT_RELEASE` in `install.sh`. Finally, you can now push a commit with the message `Release vX.Y.Z`. Create a release on GitHub. See [this commit](https://github.com/pelican-installer/pelican-installer/commit/90aaae10785f1032fdf90b216a4a8d8ca64e6d44) for reference.
 
-
-## Sponsors ✨
-
-I would like to extend my sincere thanks to the following sponsors for helping fund Pelinstaller's development.
-[Interested in becoming a sponsor?](mailto:me@matthew.expert)
-
-| Company                                                   | About                                                                                                                                                                                                                                           |
-|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ForestRacks**](https://forestracks.com/vps)  | Looking for a place to host your Pelican Panel? Try out a ForestRacks VPS, ForestRacks is a US-based 5-Star hosting provider offering services globally since 2019. |
-
 ## Contributors ✨
 
 We would like to thank the following contributors for their work in maintaining and creating this installer:
