@@ -2,39 +2,33 @@
 
 [![License: GPL v3](https://img.shields.io/github/license/Zinidia/Pelinstaller)](LICENSE.md)
 
-## Using the installation scripts
+## Verwendung der Installationsskripte
 
-To use the installation scripts, simply run this command as root. The script will ask you whether you would like to install just the panel, just Wings or both.
+Um die Installationsskripte zu verwenden, führen Sie einfach diesen Befehl als Root aus. Das Skript fragt Sie, ob Sie nur das Panel, nur Wings oder beides installieren möchten.
 
 ```bash
 bash <(curl -Ss https://raw.githubusercontent.com/DerMinecrafter2020/Pelinstaller/refs/heads/Production/install.sh || wget -O-https://raw.githubusercontent.com/DerMinecrafter2020/Pelinstaller/refs/heads/Production/install.sh) auto
 ```
 
-_Note: On some systems, it's required to be already logged in as root before executing the one-line command (where `sudo` is in front of the command does not work)._
+_Notiz: Auf einigen Systemen muss man bereits als root angemeldet sein, bevor man den einzeiligen Befehl ausführt (wobei `sudo` vor dem Befehl nicht funktioniert).._
 
-⚠️ Warning: There is currently an issue where Pelican creates files owned by the wrong Linux user when specific features on the admin panel are enabled. To resolve this, you may have to adjust the permissions by running the following command: `chown -R www-data:www-data /var/www/pelican`. For more details, check Pelican's [troubleshooting guide](https://pelican.dev/docs/troubleshooting/).
+⚠️ Warnung: Derzeit gibt es ein Problem, bei dem Pelican Dateien erstellt, die dem falschen Linux-Benutzer gehören, wenn bestimmte Funktionen im Admin-Panel aktiviert sind. Um dieses Problem zu beheben, müssen Sie möglicherweise die Berechtigungen anpassen, indem Sie den folgenden Befehl ausführen: `chown -R www-data:www-data /var/www/pelican`. Weitere Informationen finden Sie in der Dokumentation von Pelican. [troubleshooting guide](https://pelican.dev/docs/troubleshooting/).
 
-Here is a [YouTube Video](https://www.youtube.com/watch?v=E8UJhyUFoHM) that illustrates the installation process.
+## Funktionen
 
-## Features
+- Automatische Installation des Pelican Panels (Abhängigkeiten, Datenbank, Cronjob, Nginx).
+- Automatische Installation der Pelican Wings (Docker, systemd).
+- Panel: (optional) automatische Konfiguration von Let's Encrypt.
+- Panel: (optional) automatische Konfiguration der Firewall.
+- Unterstützung bei der Deinstallation sowohl des Panels als auch der Wings.
 
-- Automatic installation of the Pelican Panel (dependencies, database, cronjob, nginx).
-- Automatic installation of the Pelican Wings (Docker, systemd).
-- Panel: (optional) automatic configuration of Let's Encrypt.
-- Panel: (optional) automatic configuration of firewall.
-- Uninstallation support for both panel and wings.
+## Unterstützte Versionen 
 
-## Help and support
+Liste der unterstützten Installationskonfigurationen für Panel und Wings (Installationen, die von diesem Installationsskript unterstützt werden).
 
-For help and support regarding the script itself and **not the official Pelican project**, create a [Github Issue](https://github.com/pelican-installer/pelican-installer/issues).
+### Unterstützte Panel und Wings Version
 
-## Supported installations
-
-List of supported installation setups for panel and Wings (installations supported by this installation script).
-
-### Supported panel and wings operating systems
-
-| Operating System | Version | Supported          | PHP Version |
+| Operation System | Version | Unterstützt        | PHP Version |
 | ---------------- | ------- | ------------------ | ----------- |
 | Ubuntu           | 16.04   | :red_circle:       |             |
 |                  | 18.04   | :red_circle: \*    |             |
@@ -55,21 +49,15 @@ List of supported installation setups for panel and Wings (installations support
 | AlmaLinux        | 8       | :white_check_mark: | 8.3         |
 |                  | 9       | :white_check_mark: | 8.3         |
 
-_\* Indicates an operating system and release that previously was supported by this script._
+_\* Bezeichnet ein Betriebssystem und eine Version, die zuvor von diesem Skript unterstützt wurden._
 
-## Firewall setup
+## Firewall Einrichtung
 
-The installation scripts can install and configure a firewall for you. The script will ask whether you want this or not. It is highly recommended to opt-in for the automatic firewall setup.
+Die Installationsskripte können eine Firewall für Sie installieren und konfigurieren. Das Skript fragt Sie, ob Sie dies wünschen oder nicht. Es wird dringend empfohlen, sich für die automatische Firewall-Einrichtung zu entscheiden.
 
-## Production & Ops
+## Ersteller ✨
 
-### Creating a release
-
-In `install.sh` github source and script release variables should change every release. Firstly, update the `CHANGELOG.md` so that the release date and release tag are both displayed. No changes should be made to the changelog points themselves. Secondly, update `GITHUB_SOURCE` and `SCRIPT_RELEASE` in `install.sh`. Finally, you can now push a commit with the message `Release vX.Y.Z`. Create a release on GitHub. See [this commit](https://github.com/pelican-installer/pelican-installer/commit/90aaae10785f1032fdf90b216a4a8d8ca64e6d44) for reference.
-
-## Contributors ✨
-
-We would like to thank the following contributors for their work in maintaining and creating this installer:
+Wir möchten uns bei den folgenden Mitwirkenden für ihre Arbeit bei der Pflege und Erstellung dieses Installationsprogramms bedanken:
 1) [Matthew Jacob](https://github.com/Zinidia)
 2) [Vilhelm Prytz](https://github.com/vilhelmprytz)
 3) [Linux123123](https://github.com/Linux123123)
